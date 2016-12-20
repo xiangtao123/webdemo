@@ -1,0 +1,35 @@
+{
+  "name": "webdemo",
+  "version": "1.0.0",
+  "description": "web demo",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-concat-js": "^0.1.0",
+    "gulp-concat-replace": "^1.0.5",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.4",
+    "pump": "^1.0.1"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "webdemo"
+  ],
+  "author": "sunburst",
+  "license": "ISC"
+}
