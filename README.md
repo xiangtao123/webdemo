@@ -8,30 +8,30 @@ webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 
 ## 环境准备
 安装node.js (6)
-从官网下载安装文件：https://nodejs.org/
-或者
-源码安装：https://github.com/nodejs/node
+从官网下载安装文件：https://nodejs.org/  
+或者  
+源码安装：https://github.com/nodejs/node  
 
 ## 下载代码
-git clone https://github.com/xiangtao123/webdemo.git
-或者手动下载
-https://github.com/xiangtao123/webdemo
+git clone https://github.com/xiangtao123/webdemo.git  
+或者手动下载  
+https://github.com/xiangtao123/webdemo  
 
 ## 初始环境
-cd webdemo
-sudo npm update
-bower update
+`cd webdemo` 
+`sudo npm update`  
+`bower update`  
 
 ## 构建项目
-gulp init
-gulp
+`gulp init`  
+`gulp`  
 
 ## 启动服务
 ### 第一种
 使用web服务器，例如：nginx/apache http等。
 ### 第二种
-gulp dev-server(启动开发环境web服务)
-gulp dist-server(启动发布环境web服务)
+`gulp dev-server`(启动开发环境web服务)
+`gulp dist-server`(启动发布环境web服务)
 默认端口为：8000
 
 
