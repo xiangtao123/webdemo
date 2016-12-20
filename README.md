@@ -13,7 +13,7 @@ webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 源码安装：https://github.com/nodejs/node  
 
 ## 下载代码
-git clone https://github.com/xiangtao123/webdemo.git  
+`git clone https://github.com/xiangtao123/webdemo.git`  
 或者手动下载  
 https://github.com/xiangtao123/webdemo  
 
@@ -30,7 +30,7 @@ https://github.com/xiangtao123/webdemo
 ### 第一种
 使用web服务器，例如：nginx/apache http等。
 ### 第二种
-`gulp dev-server`(启动开发环境web服务)
+`gulp dev-server`(启动开发环境web服务)  
 `gulp dist-server`(启动发布环境web服务)
 默认端口为：8000
 
