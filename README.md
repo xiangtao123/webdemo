@@ -38,13 +38,10 @@ https://github.com/xiangtao123/webdemo
 ## 构建流程
 * `clean`：清空dist目录；
 * `init`：转储src目录文件到dist目录；
-* `minify-js`：压缩src/js/*目录下的js文件转储到dist目录；
-* `minify-css`：压缩src/css*目录下的css文件转储到dist目录；
-* `concat-js`：合并dist/js/*目录下的js文件concatenated.js；
-* `concat-css`：合并dist/css*目录下的css文件concatendate.css；
-* `concat-replace`：替换html的资源引用为合并之后的文件地址；
-* `concat-replace-mv`：将合并后的文件移动到dist目录（修复gulp-concat-replace插件目录问题）；
-* `default`：默认为：concat-replace-mv。
+* `minify-js`：压缩src/js/*目录下的js文件转储到dist目录，合并dist/js/*目录下的js文件concatenated.min.js；
+* `minify-css`：压缩src/css*目录下的css文件转储到dist目录，合并dist/css*目录下的css文件concatendate.min.css；
+* `html-replace`：替换html的资源引用为合并之后的文件地址；
+* `default`：默认为：html-replace。
 
 
 
