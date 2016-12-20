@@ -35,3 +35,40 @@ https://github.com/xiangtao123/webdemo
 默认端口为：8000
 
 
+## 构建流程
+* `clean`：清空dist目录；
+* `init`：转储src目录文件到dist目录；
+* `minify-js`：压缩src/js/*目录下的js文件转储到dist目录；
+* `minify-css`：压缩src/css*目录下的css文件转储到dist目录；
+* `concat-js`：合并dist/js/*目录下的js文件concatenated.js；
+* `concat-css`：合并dist/css*目录下的css文件concatendate.css；
+* `concat-replace`：替换html的资源引用为合并之后的文件地址；
+* `concat-replace-mv`：将合并后的文件移动到dist目录（修复gulp-concat-replace插件目录问题）；
+* `default`：默认为：concat-replace-mv。
+
+
+
+
+## 目录结构
+
+-app
+--node_modules（gulp插件依赖）
+--dist（压缩／合并后的js/css文件目录）
+---js
+----vendor（使用bower管理依赖的第三方资源）
+---css
+---img
+--src（项目源文件）
+---js
+---css
+---img
+---index.html
+---favicon.ico
+--package.json
+--gulp.js
+--bower.json
+--gitignore
+--README.md
+
+
+
