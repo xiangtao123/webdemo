@@ -29,12 +29,34 @@ var concatreplace = require('gulp-concat-replace');
 // del
 var del = require('del');
 
+// web server
+var webserver = require('gulp-webserver');
+
 
 // minify concat
 var dist_path = 'dist';
 
 // src path
 var src_path = 'src';
+
+
+gulp.task('dev_server',function(){
+  return gulp.src(src_path)
+           .pipe(webserver({
+              livereload:true,
+              directoryListing:false,
+              open:true
+            }));
+});
+
+gulp.task('dist_server',function(){
+   return gulp.src(dist_path)
+           .pipe(webserver({
+              livereload:true,
+              directoryListing:false,
+              open:true
+            }));
+});
 
 
 gulp.task('clean', function(){
