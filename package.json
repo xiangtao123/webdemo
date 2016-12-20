@@ -16,7 +16,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-concat-js": "^0.1.0",
-    "gulp-concat-replace": "^1.0.5",
+    "gulp-html-replace": "^1.6.2",
     "gulp-jshint": "^2.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.9.1",

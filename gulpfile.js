@@ -24,7 +24,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 
 // concatreplace
-var concatreplace = require('gulp-concat-replace');
+var htmlreplace = require('gulp-html-replace');
 
 // del
 var del = require('del');
@@ -100,11 +100,13 @@ gulp.task('concat-js',['minify-js'], function(){
              .pipe(gulp.dest(dist_path+'/js'));
 });
 
+/*
 gulp.task('concat-css', function(){
   return gulp.src([src_path+'/css/*.css'])
     .pipe(concatcss('concatenated.css'))
     .pipe(gulp.dest(dist_path))
 });
+*/
 
 
 gulp.task('lint', function(){
@@ -113,15 +115,11 @@ gulp.task('lint', function(){
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('concat-replace',['minify-css','concat-js'], function(){
+gulp.task('html-replace',['minify-css','concat-js'], function(){
   return gulp.src(dist_path+'/*.html')
-    .pipe(concatreplace({
-      prefix:'concat',
-      base:'../',
-      output:{
-        css:'css',
-        js:'js'
-      }
+    .pipe(htmlreplace({
+      css:dist_path+'/js/concatenated.min.js',
+      js:dist_path+'/css/concatenated.min.css'
     }))
     .pipe(gulp.dest(dist_path+'/'));// html 替换后的目录
 });
