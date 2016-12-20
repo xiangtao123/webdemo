@@ -2,7 +2,8 @@
 webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 
 ## 项目描述
-本项目为一个前端项目模版，使用构建工具gulp，包管理工具bower，实现对资源文件等压缩／合并，启动web服务。
+本项目为一个前端项目模版，使用构建工具gulp实现对资源文件等压缩／合并,web服务启动等；
+使用包管理工具bower管理项目依赖。
 
 
 ## 环境准备
