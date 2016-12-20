@@ -51,24 +51,21 @@ https://github.com/xiangtao123/webdemo
 
 ## 目录结构
 
--app
---node_modules（gulp插件依赖）
---dist（压缩／合并后的js/css文件目录）
----js
-----vendor（使用bower管理依赖的第三方资源）
----css
----img
---src（项目源文件）
----js
----css
----img
----index.html
----favicon.ico
---package.json
---gulp.js
---bower.json
---gitignore
---README.md
+# -app
+##   --node_modules（gulp插件依赖）
+##   --dist（压缩／合并后的js/css文件目录）
+##   --src（项目源文件）
+###   ---js
+####    ----vendor（使用bower管理依赖的第三方资源）
+###   ---css
+###   ---img
+###   ---index.html
+###   ---favicon.ico
+##  --package.json
+##  --gulp.js
+##  --bower.json
+##  --gitignore
+##  --README.md
 
 
 
