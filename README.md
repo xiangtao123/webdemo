@@ -18,7 +18,7 @@ webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 https://github.com/xiangtao123/webdemo  
 
 ## 初始环境
-`cd webdemo` 
+`cd webdemo`   
 `sudo npm update`  
 `bower update`  
 
