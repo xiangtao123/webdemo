@@ -124,6 +124,7 @@ gulp.task('html-replace',['minify-css','concat-js'], function(){
     .pipe(gulp.dest(dist_path+'/'));// html 替换后的目录
 });
 
+/*
 gulp.task('concat-replace-mv',['concat-replace'],function(){
        gulp.src('js/*')
          .pipe(gulp.dest(dist_path+'/js/'));
@@ -134,7 +135,8 @@ gulp.task('concat-replace-mv',['concat-replace'],function(){
        del('js/*');
        del('css/*');     
 });
+*/
 
-gulp.task('default', ['concat-replace-mv']);
+gulp.task('default', ['html-replace']);
 
 
