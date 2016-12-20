@@ -12,7 +12,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 
 // concat js
-var concatjs = require('gulp-concat-js');
+var concat = require('gulp-concat');
 
 // concat css
 var concatcss = require('gulp-concat-css');
@@ -72,9 +72,12 @@ gulp.task('init',['clean'],function(){
 
 gulp.task('minify-js', function(cb){
   return gulp.src(src_path+'/js/*.js')
+    .pipe(concat('concatenated.js'))
+    .pipe(gulp.dest(dist_path+'/js'))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(rename({suffix:'.min'}))
     .pipe(gulp.dest(dist_path+'/js'));
+
 });
 
 gulp.task('minify-css', function(){
@@ -89,53 +92,20 @@ gulp.task('minify-css', function(){
          .pipe(gulp.dest(dist_path+'/css'));
 });
 
-gulp.task('concat-js',['minify-js'], function(){
-  return gulp.src([dist_path+'/js/*.min.js'])
-             .pipe(sourcemaps.init())
-             .pipe(concatjs({
-               'target' : 'concatenated.min.js',
-               'entry': './main.js'
-              }))
-             .pipe(sourcemaps.write())
-             .pipe(gulp.dest(dist_path+'/js'));
-});
-
-/*
-gulp.task('concat-css', function(){
-  return gulp.src([src_path+'/css/*.css'])
-    .pipe(concatcss('concatenated.css'))
-    .pipe(gulp.dest(dist_path))
-});
-*/
-
-
 gulp.task('lint', function(){
   return gulp.src([src_path+'/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('html-replace',['minify-css','concat-js'], function(){
+gulp.task('html-replace',['minify-css','minify-js'], function(){
   return gulp.src(dist_path+'/*.html')
     .pipe(htmlreplace({
-      css:dist_path+'/js/concatenated.min.js',
-      js:dist_path+'/css/concatenated.min.css'
+      js:'js/concatenated.min.js',
+      css:'css/concatenated.min.css'
     }))
     .pipe(gulp.dest(dist_path+'/'));// html 替换后的目录
 });
-
-/*
-gulp.task('concat-replace-mv',['concat-replace'],function(){
-       gulp.src('js/*')
-         .pipe(gulp.dest(dist_path+'/js/'));
-
-       gulp.src('css/*')
-         .pipe(gulp.dest(dist_path+'/css/'));
-       
-       del('js/*');
-       del('css/*');     
-});
-*/
 
 gulp.task('default', ['html-replace']);
 
