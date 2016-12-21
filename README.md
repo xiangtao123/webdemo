@@ -47,8 +47,8 @@ https://github.com/xiangtao123/webdemo
 * `minify-js`：压缩src/js/*目录下的js文件转储到dist目录，合并dist/js/*目录下的js文件concatenated.min.js；
 * `minify-css`：压缩src/css*目录下的css文件转储到dist目录，合并dist/css*目录下的css文件concatendate.min.css；
 * `html-replace`：替换html的资源引用为合并之后的文件地址；
-* `default`：默认为：html-replace。
-
+* `default`：默认为：html-useref；
+* `html-useref`：根据html中资源引用，对资源进行压缩合并，替换资源引用资源地址；
 
 
 
