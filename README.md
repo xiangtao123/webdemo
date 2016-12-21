@@ -18,6 +18,12 @@ webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 https://github.com/xiangtao123/webdemo  
 
 ## 初始环境
+`sudo npm install -g yo`  
+`sudo npm install -g bower`  
+`sudo npm install --global gulp-cli`  
+
+
+## 更新依赖
 `cd webdemo`   
 `sudo npm update`  
 `bower update`  
@@ -63,6 +69,21 @@ https://github.com/xiangtao123/webdemo
 ##  --bower.json
 ##  --gitignore
 ##  --README.md
+
+
+## CI jenkins 与 gulp 构建前端项目
+* 在jenkins所在服务器上初始化环境：node.js／yo/bower/gulp
+* Excute Shell :  
+source /etc/profile  
+cd ${WORKSPACE}   
+npm update  
+bower update --allow-root  
+gulp.js init  
+gulp.js    
+* ssh publihers:  
+** source files : dist/**/*  
+** remove prefix: dist/  
+** remote directory: /var/www/webdemo/
 
 
 

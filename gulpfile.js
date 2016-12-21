@@ -26,6 +26,13 @@ var jshint = require('gulp-jshint');
 // concatreplace
 var htmlreplace = require('gulp-html-replace');
 
+// gulp-useref
+var useref = require('gulp-useref');
+
+// gulp-if
+var gulpif = require('gulp-if');
+
+
 // del
 var del = require('del');
 
@@ -107,6 +114,15 @@ gulp.task('html-replace',['minify-css','minify-js'], function(){
     .pipe(gulp.dest(dist_path+'/'));// html 替换后的目录
 });
 
-gulp.task('default', ['html-replace']);
+
+gulp.task('html-useref', function () {
+    return gulp.src(dist_path+'/*.html')
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', cleanCSS()))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['html-useref']);
 
 
