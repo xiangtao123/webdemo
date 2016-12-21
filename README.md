@@ -81,9 +81,9 @@ bower update --allow-root
 gulp.js init  
 gulp.js    
 * ssh publihers:  
-** source files : dist/**/*  
-** remove prefix: dist/  
-** remote directory: /var/www/webdemo/
+- source files : dist/**/*  
+- remove prefix: dist/  
+- remote directory: /var/www/webdemo/
 
 
 
