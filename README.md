@@ -26,7 +26,7 @@ https://github.com/xiangtao123/webdemo
 
 `sudo npm install -g yo`  
 `sudo npm install -g bower`  
-`sudo npm install --global gulp-cli`  
+`sudo npm install --global gulp`  
 
 
 ## 更新依赖
