@@ -18,6 +18,12 @@ webdemo: use bower gulp tools, minify/concat js/css,replace html link uri.
 https://github.com/xiangtao123/webdemo  
 
 ## 初始环境
+配置环境变了：  
+`vim /etc/profile`  
+- NODE_HOME=/usr/local/node6/
+- NODE_PATH=$NODE_HOME/lib/node_modules
+- export PATH=$NODE_HOME/bin:$NODE_PATH/npm/bin:$NODE_PATH/gulp/bin:$NODE_PATH/bower/bin:$PATH
+
 `sudo npm install -g yo`  
 `sudo npm install -g bower`  
 `sudo npm install --global gulp-cli`  
